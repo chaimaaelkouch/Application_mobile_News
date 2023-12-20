@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/rec"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/hsv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/allNews"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:onClick="all"
+            android:src="@drawable/breakingnews"
+            app:civ_border_color="@color/blue"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/businessImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:onClick="Buisness"
+            android:src="@drawable/business"
+            app:civ_border_color="@color/blue"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/sportsImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:onClick="sports"
+            android:src="@drawable/sports"
+            app:civ_border_color="@color/blue"
+            app:civ_border_width="2dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/techImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:onClick="tech"
+            android:src="@drawable/tech"
+            app:civ_border_color="@color/blue"
+            app:civ_border_width="2dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/hsv"
+        android:clipToPadding="false"
+        android:paddingBottom="50dp"
+        tools:listitem="@layout/item_news"/>
+
+</RelativeLayout>
+</layout>

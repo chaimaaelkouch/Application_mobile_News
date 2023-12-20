@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ma.ac.ensas.mini_projet.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="ma.ac.ensas.mini_projet.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_newsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_favoriesFragment"
+            app:destination="@id/favoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ma.ac.ensas.mini_projet.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="titre"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="integer" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailsFragment_to_favoriesFragment"
+            app:destination="@id/favoriesFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/favoriesFragment"
+        android:name="ma.ac.ensas.mini_projet.FavoriesFragment"
+        android:label="fragment_favories"
+        tools:layout="@layout/fragment_favories" >
+        <action
+            android:id="@+id/action_favoriesFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+</navigation>
