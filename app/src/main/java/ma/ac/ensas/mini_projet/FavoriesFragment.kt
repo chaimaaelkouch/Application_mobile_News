@@ -68,7 +68,7 @@ class FavoriesFragment : Fragment() {
 
     private fun showDeleteAllConfirmationDialog() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Supprimer le menu")
+        builder.setTitle("Supprimer les articles")
         builder.setMessage("Êtes-vous sûr de supprimer tous les articles enregistrés")
         builder.setPositiveButton("Supprimer tout") { dialog, which ->
             // Appeler la fonction de suppression de tous les articles

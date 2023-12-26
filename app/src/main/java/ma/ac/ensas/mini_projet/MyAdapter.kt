@@ -15,7 +15,7 @@ class MyAdapter(
     var data: List<News>,
     private val navController: NavController
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-    private var originalData: List<News> = data
+
     inner class MyViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -30,7 +30,6 @@ class MyAdapter(
         holder.binding.imageView.setImageResource(clickedItem.image)
 
         holder.itemView.setOnClickListener {
-            Log.d("MyAdapter", "Item clicked: ${clickedItem.id}")
             val action = NewsFragmentDirections.actionNewsFragmentToDetailsFragment(
                 clickedItem.id,
                 clickedItem.titre,

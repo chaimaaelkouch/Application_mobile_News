@@ -8,4 +8,6 @@
     <color name="blue">#001BFF</color>
     <color name="lightblack">#464444</color>
     <color name="lightwhite">#88FFFFFF</color>
+    <color name="lightpink">#F0604D</color>
+    <color name="rose">#FFDFDB</color>
 </resources>

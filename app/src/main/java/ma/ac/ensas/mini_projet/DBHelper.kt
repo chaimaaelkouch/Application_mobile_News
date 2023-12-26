@@ -49,9 +49,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         val db = this.writableDatabase
 
         // Vérifier si l'article existe déjà dans la base de données
-        if (!isNewsAlreadyInDatabase(news.id)) {
+        if (!isNewsAlreadyInDatabase(news.id)){
             val values = ContentValues()
-
             values.put(KEY_ID, news.id)
             values.put(KEY_TITRE, news.titre)
             values.put(KEY_DESCRIPTION, news.description)
@@ -91,7 +90,6 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
             e.printStackTrace()
             return ArrayList()
         }
-
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {

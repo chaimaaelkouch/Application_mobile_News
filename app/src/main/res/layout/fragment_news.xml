@@ -22,17 +22,17 @@
             android:layout_height="75dp"
             android:layout_margin="10dp"
             android:onClick="all"
-            android:src="@drawable/breakingnews"
+            android:src="@drawable/news"
             app:civ_border_color="@color/blue"
             app:civ_border_width="2dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/businessImage"
+            android:id="@+id/economieImage"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_margin="10dp"
             android:onClick="Buisness"
-            android:src="@drawable/business"
+            android:src="@drawable/eco"
             app:civ_border_color="@color/blue"
             app:civ_border_width="2dp" />
 
@@ -47,12 +47,12 @@
             app:civ_border_width="2dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/techImage"
+            android:id="@+id/santeImage"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_margin="10dp"
             android:onClick="tech"
-            android:src="@drawable/tech"
+            android:src="@drawable/sante"
             app:civ_border_color="@color/blue"
             app:civ_border_width="2dp" />
     </LinearLayout>

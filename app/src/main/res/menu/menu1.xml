@@ -6,7 +6,8 @@
         android:id="@+id/savedNewsFrag"
         android:title="Saved News"
         app:showAsAction="always"
-        android:icon="@drawable/ic_favorite"/>
+        android:icon="@drawable/ic_favorite"
+        android:iconTint="@color/rose"/>
 
 
     <item

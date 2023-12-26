@@ -33,6 +33,7 @@ class DetailsFragment : Fragment() {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         myHelper = DBHelper(requireContext())
         ratingsHelper = RatingsDBHelper(requireContext())
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -60,23 +61,18 @@ class DetailsFragment : Fragment() {
 
         // Ajouter un gestionnaire d'événements pour détecter les changements d'évaluation
         ratingBar.setOnRatingBarChangeListener { _, rating, _ ->
-            // Mettre à jour la base de données avec la nouvelle évaluation
             saveRatingToDatabase(id, rating)
         }
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 
         inflater.inflate(R.menu.menu1, menu)
-
         val savedIcon = menu.findItem(R.id.savedNewsFrag)
         savedIcon.isVisible = true
-
         val deleteIcon = menu.findItem(R.id.deleteAll)
         deleteIcon.isVisible = false
-
         val menuItem = menu.findItem(R.id.searchNews)
         menuItem.isVisible = false
-
 
     }
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
@@ -88,15 +84,13 @@ class DetailsFragment : Fragment() {
         }
         return super.onOptionsItemSelected(menuItem)
     }
-    // Méthode pour charger l'état d'évaluation depuis la base de données
+
     private fun loadRatingFromDatabase(articleId: Int): Float {
-        // Utilisez le RatingsDBHelper pour charger la notation de la base de données
         return ratingsHelper.loadRatingForArticle(articleId)
     }
 
-    // Méthode pour sauvegarder l'évaluation dans la base de données
+
     private fun saveRatingToDatabase(articleId: Int, rating: Float) {
-        // Utilisez le RatingsDBHelper pour sauvegarder la notation dans la base de données
         ratingsHelper.saveRatingForArticle(articleId, rating)
     }
     override fun onDestroyView() {

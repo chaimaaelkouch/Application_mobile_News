@@ -29,8 +29,6 @@ class HomeFragment : Fragment() {
             (activity as AppCompatActivity).supportActionBar?.title = "Toutes les articles"
             findNavController().navigate(R.id.action_homeFragment_to_newsFragment)
         }
-
-        setHasOptionsMenu(false) // Indiquer que ce fragment a un menu
         return binding.root
     }
 
