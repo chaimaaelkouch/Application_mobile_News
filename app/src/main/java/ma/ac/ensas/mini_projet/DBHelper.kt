@@ -116,6 +116,32 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         val result = db.delete(TABLE_NAME, null, null)
         return result > 0
     }
+    fun deleteNewsId(articleId: Int,context: Context) {
+        val db = this.writableDatabase
+        val whereClause = "$KEY_ID = ?"
+        val whereArgs = arrayOf(articleId.toString())
+        val cursor = db.query(TABLE_NAME, null, whereClause, whereArgs, null, null, null)
+        val alreadyExists = cursor.count > 0
+        cursor.close()
+
+        if (alreadyExists) {
+            val result = db.delete(TABLE_NAME, whereClause, whereArgs)
+            if (result != -1) {
+                // La suppression a réussi
+                Toast.makeText(context, "Article supprimé avec succès",Toast.LENGTH_SHORT).show()
+            } else {
+                // La suppression a échoué
+                Toast.makeText(context , "Échec de la suppression de l'article",Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            // L'article avec l'ID donné n'existe pas
+            Toast.makeText(context , "L'article avec l'ID $articleId n'existe pas dans la base de données",Toast.LENGTH_SHORT).show()
+        }
+
+        db.close()
+    }
+
+
 }
 
 

@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ma.ac.ensas.mini_projet.databinding.FragmentFavoriesBinding
-import ma.ac.ensas.projet.MyAdapter
-import androidx.navigation.fragment.findNavController
+
+
 
 class FavoriesFragment : Fragment() {
 
@@ -20,6 +19,7 @@ class FavoriesFragment : Fragment() {
     private lateinit var rv: RecyclerView
     private lateinit var favAdapter: FavoriesAdapter
     private lateinit var myHelper: DBHelper
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,8 +41,16 @@ class FavoriesFragment : Fragment() {
                 LinearLayoutManager.HORIZONTAL,
                 false
             )
-        favAdapter = FavoriesAdapter(allNews)
+        favAdapter = FavoriesAdapter(requireContext(),allNews){articleId ->
+            myHelper.deleteNewsId(articleId,requireContext())
+            updateNewsList1(myHelper.getAllNews())
+        }
         rv.adapter = favAdapter
+
+
+    }
+    private fun updateNewsList1(newData: List<News>) {
+        favAdapter.updateNewsList(newData)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -84,6 +92,7 @@ class FavoriesFragment : Fragment() {
         // Afficher la boîte de dialogue
         builder.show()
     }
+
 
 
 
