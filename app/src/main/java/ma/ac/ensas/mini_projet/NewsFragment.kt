@@ -92,6 +92,16 @@ class NewsFragment : Fragment() {
                 News(13, getString(R.string.Titre_News3_sante), getString(R.string.Desc_News3_sante), R.drawable.sant3, "Santés"),
                 News(14, getString(R.string.Titre_News4_sante), getString(R.string.Desc_News4_sante), R.drawable.sant4, "Santés"),
                 News(15, getString(R.string.Titre_News5_sante), getString(R.string.Desc_News5_sante), R.drawable.sant5, "Santés"),
+                News(16, getString(R.string.Titre_News6_sport), getString(R.string.Desc_News6_sport), R.drawable.img6, "Sports"),
+                News(17, getString(R.string.Titre_News7_sport), getString(R.string.Desc_News7_sport), R.drawable.img7, "Sports"),
+                News(18, getString(R.string.Titre_News8_sport), getString(R.string.Desc_News8_sport), R.drawable.img8, "Sports"),
+                News(19, getString(R.string.Titre_News6_sante), getString(R.string.Desc_News6_sante), R.drawable.sant6, "Santés"),
+                News(20, getString(R.string.Titre_News7_sante), getString(R.string.Desc_News7_sante), R.drawable.sant7, "Santés"),
+                News(21, getString(R.string.Titre_News8_sante), getString(R.string.Desc_News8_sante), R.drawable.sant8, "Santés"),
+                News(22, getString(R.string.Titre_News6_economie), getString(R.string.Desc_News6_economie), R.drawable.eco6, "Economies"),
+                News(23, getString(R.string.Titre_News7_economie), getString(R.string.Desc_News7_economie), R.drawable.eco7, "Economies"),
+                News(24, getString(R.string.Titre_News8_economie), getString(R.string.Desc_News8_economie), R.drawable.eco8, "Economies"),
+
                 )
         )
     }
